@@ -7,10 +7,14 @@ type Subscription struct {
 	dispatcher *Dispatcher
 }
 
-func (d *Subscription) Unsubscribe() {
-	d.dispatcher.remove(d.subject, d.id)
+func (s *Subscription) Unsubscribe() {
+	s.dispatcher.remove(s.subject, s.id)
 }
 
-func (d *Subscription) IsValid() bool {
-	return d.dispatcher.isValid(d.subject, d.id)
+func (s *Subscription) IsValid() bool {
+	return s.dispatcher.isValid(s.subject, s.id)
+}
+
+func (s *Subscription) Subject() string {
+	return s.subject
 }
