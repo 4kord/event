@@ -40,7 +40,7 @@ func (d *Dispatcher) Emit(subject string, v interface{}) {
 
 	if subs, ok := d.callbacks[subject]; ok {
 		for i := range subs {
-			subs[i].handler(v)
+			go subs[i].handler(v)
 		}
 	}
 }
