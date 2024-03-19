@@ -18,3 +18,7 @@ func (s *Subscription) IsValid() bool {
 func (s *Subscription) Subject() string {
 	return s.subject
 }
+
+func (s *Subscription) ID() string {
+	return s.id
+}
